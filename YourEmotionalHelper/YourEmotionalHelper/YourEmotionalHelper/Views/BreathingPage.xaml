@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourEmotionalHelper.Views.BreathingPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="inf.png" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+      
+            <StackLayout   HorizontalOptions="Center">
+            
+            <Label x:Name="title"  Text="Натисни щоб розпочати" HorizontalOptions="CenterAndExpand" FontSize="Large" VerticalOptions="StartAndExpand" />
+
+            <Label  x:Name="num" Text=""   FontSize="Title" HorizontalOptions="CenterAndExpand" />
+            <Label  x:Name="txt" Text=""   FontSize="Title" HorizontalOptions="CenterAndExpand" />
+            
+                <Label></Label>
+            <BoxView x:Name="box" VerticalOptions="CenterAndExpand"  
+   HorizontalOptions="CenterAndExpand"  
+   BackgroundColor="#96d1ff"  
+                   
+   CornerRadius="150"  
+   WidthRequest="300"  
+   HeightRequest="300"
+                     >
+            
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <Label></Label>
+            <Label></Label>
+            <Label></Label>
+            <Label></Label>
+            <Label></Label>
+            <Label></Label>
+            <Label></Label>
+            <Label></Label>
+            <Label></Label>
+            <!--      <Button  x:Name="Icon" Clicked="Button_Clicked"
+                   
+    WidthRequest      ="300"
+    HeightRequest     ="300"
+    CornerRadius      ="150"
+    VerticalOptions   ="CenterAndExpand"
+    HorizontalOptions ="CenterAndExpand"
+    BackgroundColor   ="#96d1ff"/>
+-->
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

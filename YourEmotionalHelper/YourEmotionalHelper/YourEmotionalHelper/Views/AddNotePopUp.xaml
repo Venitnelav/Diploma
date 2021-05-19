@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage 
+                 xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 x:Class="YourEmotionalHelper.Views.AddNote">
+    
+        <pages:PopupPage.Animation>
+            <animations:ScaleAnimation DurationIn="400"
+                                   DurationOut="300"
+                                   EasingIn="SinOut"
+                                   EasingOut="SinIn"
+                                   HasBackgroundAnimation="True"
+                                   PositionIn="Center"
+                                   PositionOut="Center"
+                                   ScaleIn="1.2"
+                                   ScaleOut="0.8" />
+        </pages:PopupPage.Animation>
+        <!--  You can use any elements here which are extended from Xamarin.Forms.View  -->
+    <StackLayout BackgroundColor="White" Padding="20,20,20,20" Margin="20" 
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center">
+        <ListView x:Name="MoodList" ItemsSource="{Binding }" HasUnevenRows="True" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2"
+                       Source="{Binding ImagePath}"
+                       Aspect="AspectFill"
+                       HeightRequest="60"
+                       WidthRequest="60" />
+                            <Label Grid.Column="1"
+                       Text="{Binding MoodName}"
+                       FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                       Grid.Column="1"
+                       Text="{Binding Id}"
+                       VerticalOptions="End" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TableView>
+            
+                
+                    <TableSection Title="Як твій настрій?">
+
+                        <EntryCell Label="Логин" Keyboard="Default" Placeholder="Введите логин" />
+                        <SwitchCell Text="Сохранить" />
+                    </TableSection>
+                    <TableSection Title="Контакты">
+                        <EntryCell Label="Телефон" Keyboard="Telephone" Placeholder="введите телефон" />
+                        <EntryCell Label="Email" Keyboard="Email" Placeholder="введите email" />
+                    </TableSection>
+             
+        </TableView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            
+            <Button
+                Grid.Column="1"
+                Clicked="Button_Clicked"                   
+                    Text="Додати"                    
+    CornerRadius      ="2"
+    VerticalOptions   ="EndAndExpand"
+    HorizontalOptions ="Center"
+    BackgroundColor   ="#96d1ff"></Button>
+            <Button           
+
+            Clicked="Button_Clicked_1"       
+              Text="Скасувати"     
+    CornerRadius      ="2"
+    VerticalOptions   ="EndAndExpand"
+    HorizontalOptions ="Center"
+    BackgroundColor ="PaleVioletRed"></Button>
+        </Grid>
+
+    </StackLayout>
+</pages:PopupPage>

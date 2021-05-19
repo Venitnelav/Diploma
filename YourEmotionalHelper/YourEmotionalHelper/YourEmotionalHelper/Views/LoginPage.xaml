@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="YourEmotionalHelper.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             
+              >
+    <ContentPage.Content >
+        <StackLayout Opacity="1" VerticalOptions="Center">
+            <Grid>
+                <Image Source="loginbg.png" Aspect="AspectFill" HeightRequest="700"  Opacity="0.2" />
+               
+                <ScrollView >
+                    
+                        <StackLayout Grid.Row="2" Grid.Column="1" Padding="30" VerticalOptions="Center">
+                        <Grid  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Entry IsPassword="True" x:Name="Password"  Placeholder="Введіть пароль" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Black"/>
+
+                        </Grid>
+                        <Button VerticalOptions="Center" Text="Увійти" CornerRadius="30" Opacity="100" FontSize="Title"  Command="{Binding LoginCommand}"/>
+                    </StackLayout>
+                   
+                </ScrollView>
+            </Grid>
+        </StackLayout>
+        <!-- <StackLayout Padding="10,0,10,0" VerticalOptions="Center" >
+            <Frame BackgroundColor="White" HeightRequest="100" WidthRequest="100" Opacity="0.7" CornerRadius="20">
+            <StackLayout Grid.Row="2" Grid.Column="1" >
+                <Grid  >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Entry IsPassword="True" x:Name="Пароль" TextColor="Black" Placeholder="Password" Grid.Column="0" Grid.ColumnSpan="2" />
+                    
+                </Grid>
+                    <Button VerticalOptions="Center" Text="Увійти" CornerRadius="30" Opacity="100" Command="{Binding LoginCommand}"/>
+                </StackLayout>
+                
+            </Frame>
+            
+           
+        </StackLayout>
+        -->
+    </ContentPage.Content>
+    
+</ContentPage>

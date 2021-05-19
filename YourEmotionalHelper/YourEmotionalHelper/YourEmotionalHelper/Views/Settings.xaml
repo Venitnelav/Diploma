@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+           xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourEmotionalHelper.Views.Settings"          
+             Title="Налаштування">
+    <sv:SettingsView HasUnevenRows="true">
+
+        <sv:Section Title="Сповіщеня" >
+            <sv:SwitchCell  x:Name="notification" IconSource="notification.png" Title="Увімкнути" On="true" />
+            <sv:TimePickerCell  x:Name="NotTime" IconSource="time.png"  Title="Час сповіщення" Format="HH:mm" Time="19:30" PickerTitle="Select time" />
+        </sv:Section>
+        <sv:Section  Title="Редагування нотатки">
+            <sv:LabelCell  IconSource="emotion.png" Title="Емоції" Tapped="LabelCell_Tapped" ></sv:LabelCell>
+            <sv:LabelCell IconSource="activity.png" Title="Активність" ></sv:LabelCell>
+
+        </sv:Section>
+       
+        <sv:Section  Title="Редагування дихальної техніки" >
+            <sv:NumberPickerCell IconSource="in.png" Title="Вдих (секунди)" Min="0" Max="99" Number="4" PickerTitle="Select number" />
+            <sv:NumberPickerCell IconSource="stop.png"  Title="Затримка повітря" Min="0" Max="99" Number="7" PickerTitle="Select number" />
+            <sv:NumberPickerCell IconSource="out.png"  Title="Видих" Min="0" Max="99" Number="8" PickerTitle="Select number" />
+            <sv:NumberPickerCell IconSource="stop.png"  Title="Затримка повітря" Min="0" Max="99" Number="0" PickerTitle="Select number" />
+            <sv:NumberPickerCell IconSource="repeat.png"  Title="Повторення циклу" Min="0" Max="99" Number="4" PickerTitle="Select number" />
+        </sv:Section>
+        <sv:Section  Title="Безпека">
+            <sv:SwitchCell IconSource="lock.png" Title="Вхід через пароль" On="true" />
+            <sv:EntryCell IconSource="password.png" Title="Пароль" ValueText="{Binding InputText.Value}" Placeholder="Input text" Keyboard="Email" TextAlignment="End" HintText="{Binding InputError.Value}" />
+        </sv:Section>
+        <sv:Section  Title="Дані">
+            <sv:SwitchCell IconSource="google.png" Title="Увімкнути синхронізацію" On="true" />
+           
+
+        </sv:Section>
+
+      
+
+    </sv:SettingsView>
+
+
+</ContentPage>
